@@ -66,6 +66,7 @@ brew install \
   tmate \
   google-chrome \
   libreoffice \
+  slack \
   wget
 
 echo "Choose an option:"
