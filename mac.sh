@@ -62,7 +62,7 @@ defaults read /Library/Preferences/com.apple.commerce.plist
 # Set up the ID account to manage iCloud settings
 echo 'Set up Apple ID:'
 /usr/bin/open 'x-apple.systempreferences:com.apple.preferences.AppleIDPrefPane'
-/usr/bin/osascript -e "display dialog \"Please add the Apple ID (root@exoclick.com or root@exads.com and the password) please configure all 2sd authentifications here, and then click 'OK'.\" with title \"Apple ID\" with icon file POSIX file \"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/InternetLocation.icns\"  buttons {\"OK\"} default button {\"OK\"}"
+/usr/bin/osascript -e "display dialog \"Please add the Apple ID (root@click.com or root@.com and the password) please configure all 2sd authentifications here, and then click 'OK'.\" with title \"Apple ID\" with icon file POSIX file \"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/InternetLocation.icns\"  buttons {\"OK\"} default button {\"OK\"}"
 /usr/bin/osascript -e 'quit app "System Preferences"'
 
 echo '---'
@@ -111,7 +111,7 @@ done
 # Function to set up WiFi and printers for each profile
 function set_wifi_and_printers_porto() {
   # Prompt for WiFi setup for Porto
-  echo "Enter the password for WiFi EXADS Porto Vodafone-EE3F13: "
+  echo "Enter the password for WiFi  Porto Vodafone-EE3F13: "
   read -s porto_password
 
   # Set up WiFi network for Porto
@@ -119,7 +119,7 @@ function set_wifi_and_printers_porto() {
 
   # Add printers for Porto
   # Printer pending:
-  lpadmin -p "EXADS" -E -v "PortoPrinter1URI" -P "/path/to/PortoPrinter1PPD"
+  lpadmin -p "" -E -v "PortoPrinter1URI" -P "/path/to/PortoPrinter1PPD"
 
  # Webroot installation Dublin
  if [ ! -d "/Applications/Webroot SecureAnywhere.app" ]; then
@@ -144,15 +144,15 @@ function set_wifi_and_printers_porto() {
 
 function set_wifi_and_printers_dublin() {
   # Prompt for WiFi setup for Dublin
-  echo "Enter the password for WiFi EXADS Dublin: "
+  echo "Enter the password for WiFi  Dublin: "
   read -s dublin_password
 
   # Set up WiFi network for Dublin
-  networksetup -setairportnetwork en0 "EXADS" "$dublin_password"
+  networksetup -setairportnetwork en0 "" "$dublin_password"
 
   # Add printers for Dublin
   # Printer pending:
-  lpadmin -p "EXADS PRINTER" -E -v "socket://192.168.114.10" -P "/tmp/XeroxDrivers_6515.gz"
+  lpadmin -p " PRINTER" -E -v "socket://192.168.114.10" -P "/tmp/XeroxDrivers_6515.gz"
 
   # Webroot installation Dublin
  if [ ! -d "/Applications/Webroot SecureAnywhere.app" ]; then
